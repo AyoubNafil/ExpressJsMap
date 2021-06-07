@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<style>
+
+.myButton {
+    margin-left: 135px;
+    margin-top: 10px;
+    box-shadow: inset 0px 1px 0px 0px #fffff0;
+    background: linear-gradient(to bottom, #fbfbfb 5%, #634b30 100%);
+    background-color: #d8d8d8;
+    border-radius: 3px;
+    border: 1px solid #ffffff;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 13px;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #4d3534;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #634b30 5%, #db7f23 100%);
+	background-color:green;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+</style>
+<div class="FaG"> 
+    <br>
+    <h3>Validation des visites des monuments</h3>
+
+    <div id="FaG-step1">
+        <h3>Definissez votre position :</h3>
+		<output id="FaG-address" class="FaG-Feedback"></output>
+		<br>
+        <div class="FaG-locate" Style="height: 200px;">
+            Double-clic sur la carte, adresse ou geolocalisation :<br>
+            <input id="FaG-photon" class="FaG-locateAddress"/> 
+            <button id="FaG-locate" class="FaG-locateGeolocBtn FaG-Btn" title="Me geolocaliser"></button><br>
+            Vous pouvez saisir ou ajuster la position geographique :
+			<br>
+			<br>
+            <label for="FaG-lat">Latitude  :</label>
+            <input id="FaG-lat" class="form-control" name="lat" type="number" min="-85" max="85" step="0.00001">
+            <label for="FaG-lon">Longitude :</label>
+            <input id="FaG-lon" class="form-control" name="lon" type="number" min="-180" max="180" step="0.00001">
+            
+        </div>
+    </div>
+    <div class="FaG-locate" Style="height: 300px;">
+        <form action="/visite/add" method="post" id="register_form">
+        <h3>Add your visite : <button type="submit" class="myButton" >Add</button></h3>
+        <div class="form-group">
+            <label for="nom">Votre Nom:</label>
+            <input type="text" class='form-control' id="nom"   name="nom" required style=" /*margin-left: 57px;*/">
+        </div>
+        <div class="form-group">
+            <label for="nom">Nom du Monument:</label>
+            <input type="text" class='form-control' id="nomm"   name="nomm" required style="/* margin-left: 3px; */" readonly="readonly">
+        </div>
+        <div class="form-group">
+            <label for="nom">Validité:</label>
+            <input type="text" class='form-control' id="validd"   name="validd" required style="/* margin-left: 80px; */" readonly="readonly">
+        </div>
+        
+		<!-- onclick="myFunction()" -->
+       </form>  
+      </div>
+    <!--<div id="FaG-step2" class="FaG-Disable">
+        <h4>�tape 2 : Recherchez des POIs</h4>
+        <div class="FaG-find">
+            <button id="FaG-query" class="FaG-searchBtn FaG-Btn" title="Rechercher"></button>
+            <label>Vous recherchez :</label>
+            <select id="FaG-typeSelector" name="searchType"></select><br>
+            <label>dans un rayon de :</label>
+            <select id="FaG-distanceSelector"></select>
+            <div id="FaG-feedbackPOI" class="FaG-Feedback"></div>
+        </div>
+    </div>
+
+    <div id="FaG-step3" class="FaG-Disable">
+        <h4>�tape 3 : Calculez un itin�raire</h4>
+        <div class="FaG-route">
+            S�lectionnez un POI puis choisissez le mode de transport :<br>
+            <div id="FaG-destination">
+                <div id="FaG-destIcon"></div>
+                <div id ="FaG-destDesc">
+                    <div id='FaG-destPOI'></div>
+                    <div id='FaG-destAddress'></div>
+                </div>
+            </div>
+            <button id="FaG-walk" class="FaG-Btn" title="A pied"></button>
+            <button id="FaG-cycle" class="FaG-Btn" title="A v�lo"></button>
+            <button id="FaG-drive" class="FaG-Btn" title="En voiture"></button>
+            <div id="FaG-feedbackRoute" class="FaG-Feedback"></div>
+        </div>
+    </div>-->
+
+    
+</div>
